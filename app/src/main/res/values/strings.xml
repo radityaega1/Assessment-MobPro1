@@ -1,0 +1,13 @@
+<resources>
+    <string name="app_name">Converter Panjang</string>
+    <string name="title"></string>
+    <string name="Jarak_km">Kilometer (km)</string>
+    <string name="hm">hm</string>
+    <string name="dam">dam</string>
+    <string name="m">m</string>
+    <string name="dm">dm</string>
+    <string name="cm">cm</string>
+    <string name="mm">mm</string>
+    <string name="hasil_x">Hasil:</string>
+    <string name="panjang_invalid">Panjang tidak boleh kosong</string>
+</resources>
