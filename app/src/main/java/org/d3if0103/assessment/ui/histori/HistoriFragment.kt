@@ -16,6 +16,7 @@ import org.d3if0103.assessment.R
 import org.d3if0103.assessment.databinding.FragmentHistoriBinding
 import org.d3if0103.assessment.db.ConverterDb
 
+
 class HistoriFragment: Fragment() {
     private val viewModel: HistoriViewModel by lazy {
         val db = ConverterDb.getInstance(requireContext())

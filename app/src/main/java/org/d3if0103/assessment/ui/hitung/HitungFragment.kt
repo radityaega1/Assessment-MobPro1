@@ -1,5 +1,6 @@
 package org.d3if0103.assessment.ui.hitung
 
+import android.content.Intent
 import android.os.Bundle
 import android.text.TextUtils
 import android.view.LayoutInflater
@@ -36,6 +37,7 @@ class HitungFragment: Fragment() {
         binding.buttondm.setOnClickListener {hitungdm()}
         binding.buttoncm.setOnClickListener {hitungcm()}
         binding.buttonmm.setOnClickListener {hitungmm()}
+        binding.bagikanButton.setOnClickListener { sharedData() }
 
         viewModel.getHasil1().observe(requireActivity(),{showResult(it)})
         viewModel.getHasil2().observe(requireActivity(),{showResult(it)})
@@ -165,5 +167,19 @@ class HitungFragment: Fragment() {
     private fun showResult(result: HasilConverter?) {
         if(result == null) return
         binding.hasilTextView.text = getString(R.string.hasil_x, result.converter)
+    }
+
+    private fun sharedData() {
+        val message = getString(R.string.bagikan,
+            binding.kmInp.text,
+            binding.hasilTextView.text
+        )
+
+        val shareIntent = Intent(Intent.ACTION_SEND)
+        shareIntent.setType("text/plain").putExtra(Intent.EXTRA_TEXT, message)
+        if (shareIntent.resolveActivity(
+                requireActivity().packageManager) != null) {
+            startActivity(shareIntent)
+        }
     }
 }

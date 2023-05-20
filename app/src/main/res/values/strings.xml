@@ -18,4 +18,5 @@
     <string name="hapus">Hapus</string>
     <string name="batal">Batal</string>
     <string name="belum_ada_data">Belum ada data</string>
+    <string name="bagikan">Hasil perhitungan adalah \n Inputan: %1$s KM \n Hasil: %2$S</string>
 </resources>
