@@ -14,6 +14,9 @@
             android:id="@+id/action_hitungFragment_to_aboutFragment"
             app:destination="@id/aboutFragment" />
         <action
+            android:id="@+id/action_hitungFragment_to_tentangFragment"
+            app:destination="@+id/tentangFragment"/>
+        <action
             android:id="@+id/action_hitungFragment_to_historiFragment"
             app:destination="@+id/historiFragment"/>
     </fragment>
@@ -27,4 +30,9 @@
         android:name="org.d3if0103.assessment.ui.histori.HistoriFragment"
         android:label="@string/histori"
         tools:layout="@layout/fragment_histori"/>
+    <fragment
+        android:id="@+id/tentangFragment"
+        android:name="org.d3if0103.assessment.ui.tentang.TentangFragment"
+        android:label="Tentang"
+        tools:layout="@layout/fragment_tentang"/>
 </navigation>
