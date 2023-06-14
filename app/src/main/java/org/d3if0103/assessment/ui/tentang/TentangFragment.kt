@@ -1,6 +1,7 @@
 package org.d3if0103.assessment.ui.tentang
 
 import android.os.Bundle
+import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -21,12 +22,12 @@ class TentangFragment: Fragment() {
 
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?,
                               savedInstanceState: Bundle?): View? {
+        Log.i("TentangFragment", "onCreateView dipanggil")
         binding = FragmentTentangBinding.inflate(layoutInflater, container, false)
         myAdapter = TentangAdapter()
         with(binding.recyclerView) {
             addItemDecoration(DividerItemDecoration(context,
-                RecyclerView.VERTICAL)
-            )
+                RecyclerView.VERTICAL))
             adapter = myAdapter
             setHasFixedSize(true)
         }
@@ -35,6 +36,7 @@ class TentangFragment: Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
+        Log.i("TentangFragment", "onViewCreated dipanggil")
 
         viewModel.getData().observe(viewLifecycleOwner) {
             myAdapter.updateData(it)
@@ -43,6 +45,31 @@ class TentangFragment: Fragment() {
         viewModel.getStatus().observe(viewLifecycleOwner) {
             updateProgress(it)
         }
+    }
+
+    override fun onStart() {
+        super.onStart()
+        Log.i("TentangFragment", "onStart dipanggil")
+    }
+
+    override fun onResume() {
+        super.onResume()
+        Log.i("TentangFragment", "onResume dipanggil")
+    }
+
+    override fun onPause() {
+        Log.i("TentangFragment", "onPause dipanggil")
+        super.onPause()
+    }
+
+    override fun onStop() {
+        Log.i("TentangFragment", "onStop dipanggil")
+        super.onStop()
+    }
+
+    override fun onDestroy() {
+        Log.i("TentangFragment", "onDestroy dipanggil")
+        super.onDestroy()
     }
 
     private fun updateProgress(status: ApiStatus) {

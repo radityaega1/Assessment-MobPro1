@@ -36,5 +36,6 @@ class TentangViewModel: ViewModel() {
     }
 
     fun getData(): LiveData<List<TentangConverter>> = data
+
     fun getStatus(): LiveData<ApiStatus> = status
 }

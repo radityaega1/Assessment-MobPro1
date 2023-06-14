@@ -3,6 +3,7 @@ package org.d3if0103.assessment.ui.hitung
 import android.content.Intent
 import android.os.Bundle
 import android.text.TextUtils
+import android.util.Log
 import android.view.LayoutInflater
 import android.view.*
 import android.widget.Toast
@@ -24,13 +25,14 @@ class HitungFragment: Fragment() {
 
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?,
                               savedInstanceState: Bundle?): View {
-
+        Log.i("HitungFragment", "onCreateView dipanggil")
         binding = FragmentHitungBinding.inflate(layoutInflater, container, false)
         setHasOptionsMenu(true)
         return binding.root
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        Log.i("HitungFragment", "onViewCreated dipanggil")
         binding.buttonhm.setOnClickListener {hitungHm()}
         binding.buttondam.setOnClickListener{hitungDam()}
         binding.buttonm.setOnClickListener  {hitungm()}
@@ -45,6 +47,31 @@ class HitungFragment: Fragment() {
         viewModel.getHasil4().observe(requireActivity(),{showResult(it)})
         viewModel.getHasil5().observe(requireActivity(),{showResult(it)})
         viewModel.getHasil6().observe(requireActivity(),{showResult(it)})
+    }
+
+    override fun onStart() {
+        super.onStart()
+        Log.i("HitungFragment", "onStart dipanggil")
+    }
+
+    override fun onResume() {
+        super.onResume()
+        Log.i("HitungFragment", "onResume dipanggil")
+    }
+
+    override fun onPause() {
+        Log.i("HitungFragment", "onPause dipanggil")
+        super.onPause()
+    }
+
+    override fun onStop() {
+        Log.i("HitungFragment", "onStop dipanggil")
+        super.onStop()
+    }
+
+    override fun onDestroy() {
+        Log.i("HitungFragment", "onDestroy dipanggil")
+        super.onDestroy()
     }
 
     override fun onCreateOptionsMenu(menu: Menu, inflater: MenuInflater) {

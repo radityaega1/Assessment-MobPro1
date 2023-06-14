@@ -1,6 +1,7 @@
 package org.d3if0103.assessment.ui.histori
 
 import android.os.Bundle
+import android.util.Log
 import android.view.LayoutInflater
 import android.view.Menu
 import android.view.MenuInflater
@@ -29,12 +30,14 @@ class HistoriFragment: Fragment() {
 
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?,
                               savedInstanceState: Bundle?): View? {
+        Log.i("HistoriFragment", "onCreateView dipanggil")
         binding = FragmentHistoriBinding.inflate(layoutInflater, container, false)
         setHasOptionsMenu(true)
         return binding.root
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        Log.i("HistoriFragment", "onViewCreated dipanggil")
         myAdapter = HistoriAdapter()
         with(binding.recyclerView) {
             addItemDecoration(DividerItemDecoration(context, RecyclerView.VERTICAL))
@@ -46,6 +49,31 @@ class HistoriFragment: Fragment() {
                 View.VISIBLE else View.GONE
             myAdapter.submitList(it)
         })
+    }
+
+    override fun onStart() {
+        super.onStart()
+        Log.i("HistoriFragment", "onStart dipanggil")
+    }
+
+    override fun onResume() {
+        super.onResume()
+        Log.i("HistoriFragment", "onResume dipanggil")
+    }
+
+    override fun onPause() {
+        Log.i("HistoriFragment", "onPause dipanggil")
+        super.onPause()
+    }
+
+    override fun onStop() {
+        Log.i("HistoriFragment", "onStop dipanggil")
+        super.onStop()
+    }
+
+    override fun onDestroy() {
+        Log.i("HistoriFragment", "onDestroy dipanggil")
+        super.onDestroy()
     }
 
     override fun onCreateOptionsMenu(menu: Menu, inflater: MenuInflater) {
