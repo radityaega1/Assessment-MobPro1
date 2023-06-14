@@ -1,4 +1,4 @@
 [
-	{"judul": "converter", "keterangan": "Converter dari KM ke MM", "imageId": "converter"},
-	{"judul": "tanda", "keterangan": "Tanda Tanya", "imageId": "tanda"}
+	{"judul": "Converter", "keterangan": "Converter dari KM ke MM", "imageId": "converter"},
+	{"judul": "Apa Itu Converter", "keterangan": "Converter Meter adalah pengubah dari km ke mm", "imageId": "tanda"}
 ]
