@@ -22,4 +22,8 @@
     <string name="tentang">Tentang</string>
     <string name="koneksi_error">Koneksi Gagal</string>
     <string name="message">%1$s diklik!</string>
+    <string name="channel_name">Updater</string>
+    <string name="channel_desc">Update data hewan otomatis</string>
+    <string name="notif_title">Ada Update baru!</string>
+    <string name="notif_text">Cek sekarang biar nggak penasaran..</string>
 </resources>

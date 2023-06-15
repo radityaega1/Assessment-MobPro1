@@ -1,9 +1,13 @@
 package org.d3if0103.assessment.ui.hitung
 
+import android.app.Application
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
+import androidx.work.ExistingWorkPolicy
+import androidx.work.OneTimeWorkRequestBuilder
+import androidx.work.WorkManager
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
 import kotlinx.coroutines.withContext
@@ -11,6 +15,8 @@ import org.d3if0103.assessment.db.ConverterDao
 import org.d3if0103.assessment.db.ConverterEntity
 import org.d3if0103.assessment.model.HasilConverter
 import org.d3if0103.assessment.model.*
+import org.d3if0103.assessment.network.UpdateWorker
+import java.util.concurrent.TimeUnit
 
 class HitungViewModel(private val db:ConverterDao): ViewModel() {
     private val hasilConverter1 = MutableLiveData<HasilConverter?>()

@@ -1,15 +1,25 @@
 package org.d3if0103.assessment.ui.hitung
 
+import android.Manifest
+import android.app.NotificationChannel
+import android.app.NotificationManager
+import android.content.Context
 import android.content.Intent
+import android.content.pm.PackageManager
+import android.os.Build
 import android.os.Bundle
 import android.text.TextUtils
 import android.util.Log
 import android.view.LayoutInflater
 import android.view.*
 import android.widget.Toast
+import androidx.annotation.RequiresApi
+import androidx.core.app.ActivityCompat
+import androidx.core.content.ContextCompat.getSystemService
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProvider
 import androidx.navigation.fragment.findNavController
+import org.d3if0103.assessment.MainActivity
 import org.d3if0103.assessment.R
 import org.d3if0103.assessment.model.HasilConverter
 import org.d3if0103.assessment.databinding.FragmentHitungBinding
